@@ -4,22 +4,13 @@
     <meta charset="UTF-8">
     <title>Wander Blog</title>
 
-    <!--jquery-->
-    <script type="text/javascript" href="/RGU/dependencies/scripts/jquery/jquery-1.11.3.min.js"></script>
-
-    <!--bootstrap-->
-    <link type="text/css" rel="stylesheet" href="/RGU/dependencies/css/bootstrap/bootstrap-theme.css" />
-    <link type="text/css" rel="stylesheet" href="/RGU/dependencies/css/bootstrap/bootstrap.css" />
-    <script type="text/javascript" src="/RGU/dependencies/scripts/bootstrap/bootstrap.js"></script>
-
-    <!--angular-->
-    <script type="text/javascript" src="/RGU/dependencies/scripts/angular/angular.min.js"></script>
-    <script type="text/javascript" src="/RGU/resources/scripts/js/app.js"></script>
-
-    <!--main js file-->
+    <!--bootstrap css-->
+    <link type="text/css" rel="stylesheet" href="/RGU/dependencies/css/bootstrap/bootstrap-theme.min.css" />
+    <link type="text/css" rel="stylesheet" href="/RGU/dependencies/css/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/RGU/resources/styles/app.css" />
 
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-cloak>
     <div ng-controller="TestController">
         {{test}}
         <button class="btn btn-primary">Test</button>
@@ -29,4 +20,14 @@
 </body>
 </html>
 
-    <!--js files-->
+<!--jquery-->
+<script type="text/javascript" src="/RGU/dependencies/scripts/jquery/jquery-1.11.3.js"></script>
+
+<!--bootstrap js-->
+<script type="text/javascript" src="/RGU/dependencies/scripts/bootstrap/bootstrap.min.js"></script>
+
+<!--angular-->
+<script type="text/javascript" src="/RGU/dependencies/scripts/angular/angular.min.js"></script>
+
+<!--setup js-->
+<script type="text/javascript" src="/RGU/resources/scripts/js/setup.js"></script>
