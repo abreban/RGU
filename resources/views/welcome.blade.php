@@ -5,7 +5,9 @@
     <title>Wander Blog</title>
 
     <!--bootstrap css-->
-    <link type="text/css" rel="stylesheet" href="../dependencies/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href=" {!! asset('/js/jquery.js') !!}" />
+
+
     <link type="text/css" rel="stylesheet" href="../dependencies/css/bootstrap/bootstrap-theme.min.css" />
     <link type="text/css" rel="stylesheet" href="../resources/styles/app.css" />
 
