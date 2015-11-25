@@ -22,3 +22,4 @@ Route::post 	('auth/register', 	'Auth\AuthController@postRegister'	);
 |--------------------------------------------------------------------------
 */
 Route::get 		('api/adventure/all', 	'AdventureController@index'	);
+Route::post     ('api/adventure/new',   'AdventureController@store');

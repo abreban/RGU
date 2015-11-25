@@ -39,7 +39,14 @@ class AdventureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user=new User();
+        $user->name=$request->input('name');
+        $user->email=$request->input('email');
+        $user->password=$request->input('password');
+        $user->country_id=$request->input('country_id');
+
+        $user->save();
+
     }
 
     /**
