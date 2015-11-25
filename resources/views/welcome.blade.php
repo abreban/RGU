@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,3 +55,4 @@
 <script type="application/javascript" src="pages/admin/userManagement.js"></script>
 <script type="application/javascript" src="pages/about/about.js"></script>
 </html>
+>>>>>>> bdf2f1756721d9cdc3e0dfc77a2e651681c23aa3
