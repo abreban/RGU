@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class MariusEController extends Controller
+class AdventureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class MariusEController extends Controller
      */
     public function index()
     {
-        //
+    $user = User::find(1);
+    return $user->toJson();
     }
 
     /**
