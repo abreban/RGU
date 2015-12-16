@@ -14,7 +14,7 @@ class CreateAdventuresTable extends Migration
     {
         Schema::create('adventures', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('anonymousVotes')->unsigned();
+            $table->integer('anonymous_votes')->unsigned();
             $table->string('name',100);
             $table->text('description');
             $table->integer('user_id')->unsigned();
