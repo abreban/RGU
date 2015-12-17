@@ -19,7 +19,7 @@ class AdventuresController extends Controller
      */
     public function index()
     {
-        $adventures=Adventure::all();
+        $adventures=Adventure::paginate(2);
         foreach($adventures as $adventure){
             $normalVotes=count(Vote::where('adventure_id', 'adventure'));
             $adventure->total_votes=$adventure->anonymous_votes+$normalVotes;
@@ -100,6 +100,7 @@ class AdventuresController extends Controller
             $normalVotes=count(Vote::where('adventure_id', 'adventure'));
             $adventure->total_votes=$adventure->anonymous_votes+$normalVotes;
         }
+        $adventures=$adventures->sortByDesc('total_votes')->take(5);
         return view("adventures.index", compact("adventures"));
     }
 
