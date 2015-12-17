@@ -2,11 +2,12 @@
 
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('app');
 });
-Route::get('/home', function(){
-	return view('pages.home');
-});
+
+Route::get('/home', 'AdventuresController@topFive');
+
+
 Route::get('auth/login','Auth\AuthController@getLogin');
 Route::get('auth/logout','Auth\AuthController@getLogout');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -19,3 +20,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::group(['middleware'=>'admin', 'prefix'=>'admin'], function(){
 	Route::get('home', 		'AdminController@index');
 });
+
+
+Route::get('/adventures', 'AdventuresController@index');
+Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
+Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
