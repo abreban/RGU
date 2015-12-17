@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Adventure;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,12 +20,35 @@ class AdventuresController extends Controller
      */
     public function index()
     {
+
         $adventures=Adventure::paginate(5);
         foreach($adventures as $adventure){
             $normalVotes=count($adventure->votes);
             $adventure->total_votes=$adventure->anonymous_votes+$normalVotes;
         }
-        return view("adventures.index", compact("adventures"));
+
+        $authors=User::all();
+
+        return view("adventures.index", compact("adventures","authors"));
+    }
+
+    public function search(Request $request){
+
+        if ($request){
+            $adventures=Adventure::where('name', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('description', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('anonymous_votes', '=', '%'.$request->search.'%')
+                ->paginate(5);
+            foreach($adventures as $adventure){
+                $normalVotes=count($adventure->votes);
+                $adventure->total_votes=$adventure->anonymous_votes+$normalVotes;
+            }
+        }
+
+        $authors=User::all();
+
+        return view("adventures.index", compact("adventures","authors"));
+
     }
 
     /**
@@ -125,4 +149,6 @@ class AdventuresController extends Controller
         }
         return redirect('adventures');
     }
+
+
 }

@@ -23,9 +23,7 @@
 
         <h1>{{$adventure->name}}</h1>
         <br/>
-        <h4>{{ date('F d, Y', strtotime($adventure->created_at)) }} by  {{$adventure->author->name}}
-
-        </h4>
+        <h5><b>{{ date('F d, Y', strtotime($adventure->created_at)) }}</b> by  <b>{{$adventure->author->name}}</b></h5>
         <br />
         <p class="well well-sm">{{$adventure->description}}</p>
         <a href="" class="btn btn-default">View</a>
