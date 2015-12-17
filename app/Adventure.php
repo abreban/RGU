@@ -12,4 +12,7 @@ class Adventure extends Model
         return $this->hasMany('App\Vote');
     }
 
+    public function author(){
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

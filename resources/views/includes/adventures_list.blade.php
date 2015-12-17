@@ -20,7 +20,13 @@
         </ul>
     </div>
     <div class="col-sm-10">
+
         <h1>{{$adventure->name}}</h1>
+        <br/>
+        <h4>{{ date('F d, Y', strtotime($adventure->created_at)) }} by  {{$adventure->author->name}}
+
+        </h4>
+        <br />
         <p class="well well-sm">{{$adventure->description}}</p>
         <a href="" class="btn btn-default">View</a>
     </div>
