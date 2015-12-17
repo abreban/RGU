@@ -22,9 +22,9 @@
                         <li class="dropdown">
                             <a style="cursor: pointer;" class="dropdown-toggle" data-toggle="dropdown">Administration<span class="caret space-left"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#/dashboard">Dashboard</a></li>
-                                <li><a href="#/userManagement">User Management</a></li>
-                                <li><a href="#/roleManagement">Role Management</a></li>
+                                <li><a href="">Dashboard</a></li>
+                                <li><a href="">User Management</a></li>
+                                <li><a href="">Role Management</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -40,7 +40,7 @@
                 </ul>
             @else
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a> </li>
+                    <li><a href="/home">Home</a> </li>
                     <li><a href="/adventures">Adventures</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

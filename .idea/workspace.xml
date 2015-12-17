@@ -2,52 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15a0307f-27f7-4fdc-bb14-8a4d2bb50d43" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdventureController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/about/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/about/about.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/admin/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/admin/dashboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/admin/roleManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/admin/roleManagement.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/admin/userManagement.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/admin/userManagement.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/adventures/addAdventure.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/adventures/addAdventure.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/adventures/adventureDetails.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/adventures/adventureDetails.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/adventures/adventures.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/adventures/adventures.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/authors/authorDetails.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/authors/authorDetails.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/authors/authors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/authors/authors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/home/home.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/pages/home/home.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/resources/scripts/js/Services.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/resources/scripts/js/mainController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/resources/scripts/js/setup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env.example" afterPath="$PROJECT_DIR$/.env.example" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Adventure.php" afterPath="$PROJECT_DIR$/app/Adventure.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/public/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.css" afterPath="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.css.map" afterPath="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/resources/styles/app.css" afterPath="$PROJECT_DIR$/public/resources/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/includes/head.blade.php" afterPath="$PROJECT_DIR$/resources/views/includes/head.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/includes/adventures_list.blade.php" afterPath="$PROJECT_DIR$/resources/views/includes/adventures_list.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/includes/home_menubar.blade.php" afterPath="$PROJECT_DIR$/resources/views/includes/home_menubar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" />
     </list>
     <ignored path="RGU.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,8 +28,8 @@
       <file leaf-file-name="home_menubar.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/includes/home_menubar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.038462">
-              <caret line="33" column="130" selection-start-line="33" selection-start-column="108" selection-end-line="33" selection-end-column="130" />
+            <state vertical-scroll-proportion="-18.307692">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -99,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdventuresController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdventuresController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdventuresController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52667814">
+            <state vertical-scroll-proportion="-11.769231">
               <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
@@ -121,13 +77,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adventures_list.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adventures_list.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/includes/adventures_list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.55593807">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,7 +154,6 @@
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.css.map" />
-        <option value="$PROJECT_DIR$/resources/views/includes/home_menubar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/public/dependencies/css/bootstrap/bootstrap.css" />
         <option value="$PROJECT_DIR$/public/resources/styles/app.css" />
@@ -208,9 +164,10 @@
         <option value="$PROJECT_DIR$/app/Adventure.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/adventures_list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/adventures/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/includes/adventures_list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdventuresController.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/home_menubar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/includes/adventures_list.blade.php" />
       </list>
     </option>
   </component>
@@ -1053,14 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/home_menubar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.038462">
-          <caret line="33" column="130" selection-start-line="33" selection-start-column="108" selection-end-line="33" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includes/admin_page_menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11703958">
@@ -1085,16 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/adventures_list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
@@ -1105,10 +1044,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdventuresController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52667814">
+        <state vertical-scroll-proportion="-11.769231">
           <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/home_menubar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includes/adventures_list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55593807">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
