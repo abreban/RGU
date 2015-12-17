@@ -14,7 +14,6 @@
   	</tbody>
   	</table>
      <hr>
-     {!! $users->render() !!}
    </div>
    <div class="col-md-8">
       <h4>Roles</h4>
@@ -24,14 +23,4 @@
    </div>
 </div>s
 <script type="text/javascript">
-$(document).ready(function(){
- $(".user").click(function(){
-      var id = this.id;
-      $.post('/users/roles', {id: id}, function(markup)
-      {          
-          $('#user_roles').html(markup);       
-      });
-  });
- });
-</script>
 @endsection

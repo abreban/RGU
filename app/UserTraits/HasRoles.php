@@ -29,7 +29,7 @@ trait HasRoles{
     }
     public function isAdmin()
     {
-        return $this->hasRole('EM_LIVE_SYS_ADMIN');
+        return $this->hasRole('admin');
     }
     public function isOEMAdmin()
     {

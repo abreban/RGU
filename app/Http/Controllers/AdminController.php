@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\User;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function users()
     {
-        //
+        $users = User::all();
+        return view('pages.admin_pages.admin_users')
+                ->with('users',$users);
     }
 
     /**
