@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Comment;
+
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
@@ -26,7 +30,7 @@ class CommentsController extends Controller
      */
     public function create()
     {
-        return view("comments.create");
+       //
     }
 
     /**
@@ -37,7 +41,19 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, ['message'=>'required']);
+
+        $comment=new Comment();
+        $comment->message=$request->message;
+        $comment->user_id=Auth::user()->id;
+        $comment->adventure_id=$request->adventure_id;
+        $comment->created_at=Carbon::now();
+
+
+        $comment->save();
+        return redirect('/adventures/'.$request->adventure_id.'/show');
+
     }
 
     /**
@@ -48,7 +64,8 @@ class CommentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $adventure_id=$id;
+        return view("comments.create", compact('adventure_id'));
     }
 
     /**

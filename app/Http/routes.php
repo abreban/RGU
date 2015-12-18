@@ -33,6 +33,6 @@ Route::get('/adventures/{id}/show', 'AdventuresController@show');
 Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
 
-Route::get('/comments/create/{id}', "CommentsController@create");
+Route::get('/comments/create/{id}', "CommentsController@show");
 Route::post('/comments/create', "CommentsController@store");
 
