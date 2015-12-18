@@ -892,6 +892,7 @@
                 "laravel"
             ],
             "time": "2015-12-02 21:59:57"
+<<<<<<< HEAD
         },
         {
             "name": "laravelcollective/html",
@@ -942,6 +943,8 @@
                 }
             ],
             "time": "2015-11-28 08:27:09"
+=======
+>>>>>>> 2f82b358671e87b8b970005a9c30c32543fe7578
         },
         {
             "name": "league/flysystem",
@@ -1212,10 +1215,17 @@
             "require": {
                 "ext-tokenizer": "*",
                 "php": ">=5.4"
+<<<<<<< HEAD
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
             },
+=======
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+>>>>>>> 2f82b358671e87b8b970005a9c30c32543fe7578
             "bin": [
                 "bin/php-parse"
             ],
