@@ -30,3 +30,9 @@ Route::get('/adventures', 'AdventuresController@index');
 Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
 Route::post('/adventures/search', 'AdventuresController@search');
+<<<<<<< HEAD
+=======
+
+Route::get('/authors', 'AuthorsController@index');
+Route::get('/authors/{id}' , 'AuthorsController@show');
+>>>>>>> 98b70792ac17f87ce4771fde957f0a5231dce0fa
