@@ -33,7 +33,10 @@
     <!-- load scripts -->
     <script>
         $(function() {
-            $( "#datepicker" ).datepicker();
+            $( "#before" ).datepicker();
+        });
+        $(function() {
+            $( "#after" ).datepicker();
         });
     </script>
 
