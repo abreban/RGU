@@ -3,6 +3,7 @@
 @section('content')
     <div class="container" style="margin-top:20px;">
         <div class="row">
+            @if (count($adventures))
             <div class="col-sm-3 well well-sm">
                 <br />
                 <form method="POST" action="/adventures/search" role="form">
@@ -15,24 +16,33 @@
                                  <input type="submit" value="Submit" class="btn btn-default" />
                             </div>
                         </div>
-                        <hr />
-                        <label>Published By:</label>
-                        <select class="form-control" id="author" name="author" >
-                            <option selected disabled>Filter By Author</option>
-                            @foreach($authors as $author)
-                                <option value="{{$author->id}}">{{$author->name}}</option>
-                            @endforeach
-                        </select>
-                        <br/>
-                        <input type="date" id="datepicker" name="datepicker" class="form-control" />
                 </form>
+                        <!-- filter -->
+                        {{--<hr />--}}
+                        {{--<label>Published By:</label>--}}
+                        {{--<select class="form-control" id="author" name="author" >--}}
+                            {{--<option selected disabled>Filter By Author</option>--}}
+                            {{--@foreach($authors as $author)--}}
+                                {{--<option value="{{$author->id}}">{{$author->name}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                        {{--<br/>--}}
+                        {{--<hr />--}}
+                        {{--<label>Published Before:</label>--}}
+                        {{--<input type="date" id="before" name="before" class="form-control" />--}}
+                        {{--<label>Published After:</label>--}}
+                        {{--<input type="date" id="after" name="after" class="form-control" />--}}
+
             </div>
             <div class="col-sm-9">
-                @foreach($adventures as $adventure)
-                    @include('includes.adventures_list')
-                @endforeach
-                {!! $adventures->render() !!}
-            </div>
+                  @foreach($adventures as $adventure)
+                        @include('includes.adventures_list')
+                    @endforeach
+                    {!! $adventures->render() !!}
+             </div>
+            @else
+                <h3>Nothing to display</h3>
+            @endif
         </div>
 
     </div>

@@ -5,4 +5,5 @@
             @include('includes.adventures_list')
         @endforeach
     </div>
+
 @stop

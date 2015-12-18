@@ -4,6 +4,7 @@
 Route::get('/', function () {
     return view('app');
 });
+
 Route::get('auth/login','Auth\AuthController@getLogin');
 Route::get('auth/logout','Auth\AuthController@getLogout');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -21,15 +22,24 @@ Route::group(['middleware'=>'admin', 'prefix'=>'admin'], function(){
 
 	Route::resource('roles',			'RoleController');
 	Route::resource('users',			'UsersController');
-	Route::resource('permissions',			'PermissionsController');
+	Route::resource('permissions',		'PermissionsController');
 });
-	Route::get('home', 		'AdminController@index');
-
 
 Route::get('/adventures', 'AdventuresController@index');
+Route::post('/adventures/search', 'AdventuresController@search');
+Route::get('/adventures/create', 'AdventuresController@create');
+Route::post('/adventures/create', 'AdventuresController@store');
+Route::get('/adventures/{id}/show', 'AdventuresController@show');
 Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
+<<<<<<< HEAD
 Route::post('/adventures/search', 'AdventuresController@search');
 
 Route::get('/authors', 'AuthorsController@index');
 Route::get('/authors/{id}' , 'AuthorsController@show');
+=======
+
+Route::get('/comments/create/{id}', "CommentsController@show");
+Route::post('/comments/create', "CommentsController@store");
+
+>>>>>>> 75dd3d69224ba777738a0dfb8969bd0c09a45289
