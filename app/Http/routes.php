@@ -26,3 +26,6 @@ Route::get('/adventures', 'AdventuresController@index');
 Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
 Route::post('/adventures/search', 'AdventuresController@search');
+
+Route::get('/authors', 'AuthorsController@index');
+Route::get('/authors/{id}' , 'AuthorsController@show');
