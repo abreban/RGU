@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Vote;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Adventure;
 use App\User;
+use App\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,19 +36,21 @@ class AdventuresController extends Controller
 
     public function search(Request $request){
 
-        if ($request){
-            $adventures=Adventure::where('name', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('description', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('anonymous_votes', '=', '%'.$request->search.'%')
-                ->paginate(5);
-            foreach($adventures as $adventure){
-                $normalVotes=count($adventure->votes);
-                $adventure->total_votes=$adventure->anonymous_votes+$normalVotes;
-            }
-        }
-
         $authors=User::all();
 
+        if ($request->search){
+            $adventures=Adventure::where('name', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('description', 'LIKE', '%'.$request->search.'%')
+                ->orWhere('anonymous_votes', '=', '%'.$request->search.'%')->paginate(5);;
+
+        }else{
+            $adventures=Adventure::all();
+        }
+
+        foreach($adventures as $adventure){
+            $normalVotes=count($adventure->votes);
+            $adventure->total_votes=$adventure->anonymous_votes+$normalVotes;
+        }
         return view("adventures.index", compact("adventures","authors"));
 
     }
@@ -58,7 +62,7 @@ class AdventuresController extends Controller
      */
     public function create()
     {
-        //
+        return view('adventures.create');
     }
 
     /**
@@ -69,7 +73,18 @@ class AdventuresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['name'=> 'required|min:2', 'description'=>'required']);
+
+        $adventure=new Adventure();
+        $adventure->name=$request->name;
+        $adventure->description=$request->description;
+        $adventure->anonymous_votes=0;
+        $adventure->created_at=Carbon::now();
+        $adventure->user_id=Auth::user()->id;
+
+        $adventure->save();
+
+        return redirect('/adventures');
     }
 
     /**
@@ -80,7 +95,10 @@ class AdventuresController extends Controller
      */
     public function show($id)
     {
-        //
+        $adventure=Adventure::find($id);
+        $comments=Comment::where('adventure_id',$id)->get();
+
+        return view('adventures.show', compact('adventure','comments'));
     }
 
     /**
@@ -133,7 +151,7 @@ class AdventuresController extends Controller
         if ($adventure){
             return view("vote.index", compact('adventure'));
         }
-        return redirect("/home");
+        return redirect("/adventures");
     }
 
     public function vote(Request $request){
