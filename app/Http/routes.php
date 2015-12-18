@@ -5,9 +5,6 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('/home', 'AdventuresController@topFive');
-
-
 Route::get('auth/login','Auth\AuthController@getLogin');
 Route::get('auth/logout','Auth\AuthController@getLogout');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -18,9 +15,15 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 
 Route::group(['middleware'=>'admin', 'prefix'=>'admin'], function(){
-	Route::get('home', 		'AdminController@index');
-});
+	Route::get('home', 				'AdminController@home');
+	Route::post('addrole/{id}',  ['as'=>'addrole', 'uses'=>'AdminController@addRole']);
+	Route::post('addpermission/{id}',  ['as'=>'addpermission', 'uses'=>'AdminController@addPermission']);
+	Route::post('resetpassword/{id}',  ['as'=>'resetpassword', 'uses'=>'AdminController@resetPassword']);
 
+	Route::resource('roles',			'RoleController');
+	Route::resource('users',			'UsersController');
+	Route::resource('permissions',		'PermissionsController');
+});
 
 Route::get('/adventures', 'AdventuresController@index');
 Route::post('/adventures/search', 'AdventuresController@search');
@@ -29,4 +32,7 @@ Route::post('/adventures/create', 'AdventuresController@store');
 Route::get('/adventures/{id}/show', 'AdventuresController@show');
 Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
+
+Route::get('/comments/create/{id}', "CommentsController@create");
+Route::post('/comments/create', "CommentsController@store");
 

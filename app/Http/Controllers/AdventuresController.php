@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Adventure;
 use App\User;
+use App\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,7 +41,7 @@ class AdventuresController extends Controller
         if ($request->search){
             $adventures=Adventure::where('name', 'LIKE', '%'.$request->search.'%')
                 ->orWhere('description', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('anonymous_votes', '=', '%'.$request->search.'%')->paginate(2);;
+                ->orWhere('anonymous_votes', '=', '%'.$request->search.'%')->paginate(5);;
 
         }else{
             $adventures=Adventure::all();
@@ -95,7 +96,9 @@ class AdventuresController extends Controller
     public function show($id)
     {
         $adventure=Adventure::find($id);
-        return view('adventures.show', compact('adventure'));
+        $comments=Comment::where('adventure_id',$id)->get();
+
+        return view('adventures.show', compact('adventure','comments'));
     }
 
     /**

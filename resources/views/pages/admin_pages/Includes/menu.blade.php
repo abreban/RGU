@@ -9,16 +9,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Wander Blog</a>
+                <a class="navbar-brand" href="/admin/home">Wander Blog User Management</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <ul class="nav navbar-nav">
-                        <li><a href="/adventures">Adventures</a></li>
-                        @if (Auth::check())
-                        <li><a href="/adventures/create">Add Adventure</a></li>
-                        <li><a href="/authors">Authors</a></li>
-                        @endif
+                        <li><a href="/admin/users">Users</a></li>
+                        <li><a href="/admin/roles">Roles</a></li>
+                        <li><a href="/admin/permissions">Permissions</a></li>
                     </ul>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -28,13 +26,11 @@
                         <ul class="dropdown-menu">
                             @if (Auth::check())
                             @can('admin')
-                            <li><a href="/admin/home">User Management</a></li>    
+                            <li><a href="/admin/users">User Management</a></li>    
                             @endcan
                             <li><a href="/profile">My Profile</a> </li>
                             <li><a href="/auth/logout">Logout</a></li>
-                            @else
-                            <li><a href="/auth/register"</a> Register</li>
-                            <li><a href="/auth/login">Login</a></li>
+                            <li><a href="/">Back To Main Site</a></li>
                             @endif
                         </ul>
                     </li>
