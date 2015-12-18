@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vote;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -60,7 +61,7 @@ class AdventuresController extends Controller
      */
     public function create()
     {
-        //
+        return view('adventures.create');
     }
 
     /**
@@ -71,7 +72,18 @@ class AdventuresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['name'=> 'required|min:2', 'description'=>'required']);
+
+        $adventure=new Adventure();
+        $adventure->name=$request->name;
+        $adventure->description=$request->description;
+        $adventure->anonymous_votes=0;
+        $adventure->created_at=Carbon::now();
+        $adventure->user_id=Auth::user()->id;
+
+        $adventure->save();
+
+        return redirect('/adventures');
     }
 
     /**
@@ -82,7 +94,8 @@ class AdventuresController extends Controller
      */
     public function show($id)
     {
-        //
+        $adventure=Adventure::find($id);
+        return view('adventures.show', compact('adventure'));
     }
 
     /**
@@ -135,7 +148,7 @@ class AdventuresController extends Controller
         if ($adventure){
             return view("vote.index", compact('adventure'));
         }
-        return redirect("/home");
+        return redirect("/adventures");
     }
 
     public function vote(Request $request){

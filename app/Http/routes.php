@@ -23,6 +23,10 @@ Route::group(['middleware'=>'admin', 'prefix'=>'admin'], function(){
 
 
 Route::get('/adventures', 'AdventuresController@index');
+Route::post('/adventures/search', 'AdventuresController@search');
+Route::get('/adventures/create', 'AdventuresController@create');
+Route::post('/adventures/create', 'AdventuresController@store');
+Route::get('/adventures/{id}/show', 'AdventuresController@show');
 Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
-Route::post('/adventures/search', 'AdventuresController@search');
+
