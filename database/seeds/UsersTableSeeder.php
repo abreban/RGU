@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use App\User as User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,8 +13,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 10)->create()->each(function($u) {
-            $u->roles()->save(factory(App\Role::class)->make());
-        });
+        //DB::table('users')->delete();
+        $faker = Faker::create();
+        foreach(range(1, 10) as $index)
+        {
+            User::create([
+                'name' => $faker->userName,
+                'password' => 'secret',
+                'email' => $faker->email
+            ]);
+        }
+
     }
 }

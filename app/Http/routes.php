@@ -36,3 +36,6 @@ Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
 Route::get('/comments/create/{id}', "CommentsController@show");
 Route::post('/comments/create', "CommentsController@store");
 
+Route::get('/authors', 'AuthorsController@index');
+Route::get('/authors/{id}' , 'AuthorsController@show');
+
