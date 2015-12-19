@@ -9,17 +9,22 @@ use App\User;
 use App\UserRole;
 use App\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB as DB;
 
 class AuthorsController extends Controller
 {
 
     public function index()
     {
-        $authors = User::whereHas('roles', function($q){
-        $q->where('name', 'author');
-        })->get();
+        $authors = DB::table('users')
+            ->join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->join('roles', 'role_user.role_id', '=', 'roles.id')
+            ->select('users.*')
+            ->where('roles.name', '=', 'author')
+            ->get();
         return view("authors.index")
-        ->with($authors,'authors');
+            ->with('authors',$authors);
+
     }
 
     public function create()
@@ -35,7 +40,7 @@ class AuthorsController extends Controller
     public function show($id)
     {
         $author = Users::findOrFail($id);
-        //return view("authors.show", $author);
+
     }
 
     public function edit($id)
