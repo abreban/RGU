@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Adventure;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -16,7 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $top_adventures = Adventure::orderBy('anonymous_votes')->get();
+        return view('home.index')
+        ->with('top_adventures',$top_adventures);
     }
 
     /**

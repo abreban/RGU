@@ -18,7 +18,8 @@ class AuthorsController extends Controller
         $authors = User::whereHas('roles', function($q){
         $q->where('name', 'author');
         })->get();
-        return view("authors.index", compact("authors"));
+        return view("authors.index")
+        ->with($authors,'authors');
     }
 
     public function create()
