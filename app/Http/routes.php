@@ -34,5 +34,14 @@ Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
 Route::post('/adventures/search', 'AdventuresController@search');
 
+<<<<<<< HEAD
 Route::get('/authors', 'AuthorsController@index');
 Route::get('/authors/{id}' , 'AuthorsController@show');
+=======
+Route::get('/comments/create/{id}', "CommentsController@show");
+Route::post('/comments/create', "CommentsController@store");
+
+Route::get('/authors', 'AuthorsController@index');
+Route::get('/authors/{id}' , 'AuthorsController@show');
+
+>>>>>>> 5c2b94b0d7be713a278e244eba0c9336142e3b85
