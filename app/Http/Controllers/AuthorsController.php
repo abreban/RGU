@@ -7,14 +7,11 @@ use App\Http\Requests;
 use App\Role;
 use App\User;
 use App\UserRole;
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-=======
 use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB as DB;
->>>>>>> bb72d0e780715d901a7d5daf313c5e6e4d4b017f
 
 class AuthorsController extends Controller
 {
