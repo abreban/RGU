@@ -7,6 +7,5 @@
                 <h1> ffs :'( </h1>
             </div>
         </div>
-
     </div>
 @stop

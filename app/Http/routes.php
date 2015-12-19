@@ -19,10 +19,13 @@ Route::group(['middleware'=>'admin', 'prefix'=>'admin'], function(){
 });
 //Adventure Routes
 Route::get('/adventures', 'AdventuresController@index');
+Route::post('/addpicture/{id}', 'AdventuresController@addpic');
 Route::get('/adventures/{id}/vote', 'AdventuresController@voteShow');
 Route::post('/adventures/{id}/vote', 'AdventuresController@vote');
 Route::get('/adventures/{id}/show','AdventuresController@show');
 Route::post('/adventures/search', 'AdventuresController@search');
+Route::get('/adventures/create', 'AdventuresController@create');
+Route::post('/adventures/create', 'AdventuresController@store');
 //Author Routes
 Route::get('/authors', 'AuthorsController@index');
 Route::get('/authors/{id}' , 'AuthorsController@show');

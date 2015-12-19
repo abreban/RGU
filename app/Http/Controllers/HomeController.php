@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $top_adventures = Adventure::orderBy('anonymous_votes')->get();
+        $top_adventures = Adventure::orderBy('all_votes','DESC')->get();
         return view('home.index')
         ->with('top_adventures',$top_adventures);
     }

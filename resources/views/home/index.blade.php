@@ -6,7 +6,7 @@
          <div class="panel-body">
         @for ($i = 0; $i < count($top_adventures); $i++)
         	<div>
-		        <h1>{{$top_adventures[$i]->name}}</h1>
+		        <h1> {{$top_adventures[$i]->name}}<span class="badge badge-important">{{$top_adventures[$i]->all_votes}}</span></h1>
 		        <br/>
 		        <h5><b>{{ date('F d, Y', strtotime($top_adventures[$i]->created_at)) }}</b> by  <b>{{$top_adventures[$i]->author->name}}</b></h5>
 		        <br />

@@ -2,22 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Role;
 use App\User;
 use App\UserRole;
-use App\Role;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AuthorsController extends Controller
 {
 
     public function index()
     {
-        $authors = User::whereHas('roles', function($q){
-        $q->where('name', 'author');
-        })->get();
+        $users = DB::table('users')
+            ->join('role_user', 'users.id', '=', 'role_user.user_id')
+			->join('roles', 'role_user.role_id', '=', 'roles.id')
+            ->select('users.*')
+			->where('roles.name', '=', 'author')
+            ->get();
+			dd($users);
         return view("authors.index")
         ->with($authors,'authors');
     }

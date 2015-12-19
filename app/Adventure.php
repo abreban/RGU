@@ -15,4 +15,7 @@ class Adventure extends Model
     public function author(){
         return $this->belongsTo('App\User', 'user_id');
     }
+    public function photos(){
+    	return $this->hasMany('App\Picture');
+    }
 }

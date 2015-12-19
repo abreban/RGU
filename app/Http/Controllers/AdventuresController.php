@@ -152,13 +152,28 @@ class AdventuresController extends Controller
         }
         return redirect("/adventures");
     }
+    public function addpic($id, Request $request){
+        $file = $request->file('file');
+        $name = time(). $file->getClientOriginalName();
+        $picture = new App\Picture;
+        $picture->adventure_id = $id;
+        $picture->path = $name;
+        $picture->save();
+        $file->move('photos', $name);
+    }
 
     public function vote(Request $request){
         if ($request->anonymous){
             $adventure=Adventure::findOrFail($request->id);
             $adventure->increment('anonymous_votes');
+            $adventure->increment('all_votes');
             $adventure->save();
         }else {
+            $adventure=Adventure::findOrFail($request->id);
+            $adventure->increment('anonymous_votes');
+            $adventure->increment('all_votes');
+            $adventure->save();
+
             $vote=new Vote();
             $vote->adventure_id=$request->id;
             $vote->user_id=Auth::user()->id;

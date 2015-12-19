@@ -40,6 +40,10 @@
               </article>
         </div>
     </div>
+    <form action="/addpicture/{{$adventure->id}}" class="dropzone">
+        {{csrf_field()}}
+    </form>   
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.js"></script>
 
 
 @endsection
