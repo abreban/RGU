@@ -24,13 +24,18 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-1">Picture:</label>
+                                <label class="col-sm-1">Country:</label>
                                 <div class="col-sm-11">
-                                    <input type="file" name ="photo" id="photo" class="form-control" />
-                                </div>
+                                <select class="form-control" id="country" name="country" >
+                                    <option selected disabled>Select a country</option>
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->name}}">{{$country->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <input class="btn btn-sml btn-info btn-block" type="submit" value="Post Adventure">
+                            </div>
+                            <div class="col-sm-2    ">
+                                <input class="btn btn-info btn-block" type="submit" value="Post Adventure">
                             </div>
                         </form>
                         @if (count($errors)>0)

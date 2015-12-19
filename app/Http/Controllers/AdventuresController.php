@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Adventure;
+use App\Comment;
+use App\Country;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Picture;
+use App\User;
 use App\Vote;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Adventure;
-use App\User;
-use App\Comment;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class AdventuresController extends Controller
@@ -61,7 +62,9 @@ class AdventuresController extends Controller
      */
     public function create()
     {
-        return view('adventures.create');
+        $countries = Country::all();
+        return view('adventures.create')
+        ->with('countries',$countries);
     }
 
     /**
@@ -96,8 +99,10 @@ class AdventuresController extends Controller
     {
         $adventure=Adventure::find($id);
         $comments=Comment::where('adventure_id',$id)->get();
+        $pictures=Picture::where('adventure_id',$id)->get();
 
-        return view('adventures.show', compact('adventure','comments'));
+        return view('adventures.show', compact('adventure','comments'))
+        ->with('pictures',$pictures);
     }
 
     /**
@@ -155,11 +160,11 @@ class AdventuresController extends Controller
     public function addpic($id, Request $request){
         $file = $request->file('file');
         $name = time(). $file->getClientOriginalName();
-        $picture = new App\Picture;
+        $file->move('photos', $name);
+        $picture = new Picture;
         $picture->adventure_id = $id;
         $picture->path = $name;
         $picture->save();
-        $file->move('photos', $name);
     }
 
     public function vote(Request $request){
