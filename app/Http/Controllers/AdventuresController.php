@@ -40,17 +40,16 @@ class AdventuresController extends Controller
 
         if ($request->search){
             $adventures=Adventure::where('name', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('description', 'LIKE', '%'.$request->search.'%')
-                ->orWhere('anonymous_votes', '=', '%'.$request->search.'%')->paginate(5);;
+                ->orWhere('description', 'LIKE', '%'.$request->search.'%')->paginate(5);;
 
         }else{
-            $adventures=Adventure::all();
+            $adventures=Adventure::paginate(5);
         }
-
         foreach($adventures as $adventure){
             $normalVotes=count($adventure->votes);
             $adventure->total_votes=$adventure->anonymous_votes+$normalVotes;
         }
+
         return view("adventures.index", compact("adventures","authors"));
 
     }
