@@ -8,9 +8,6 @@ use App\Role;
 use App\User;
 use App\UserRole;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Role;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB as DB;
 
 class AuthorsController extends Controller
@@ -41,8 +38,8 @@ class AuthorsController extends Controller
 
     public function show($id)
     {
-        $author = Users::findOrFail($id);
-
+        $author = User::findOrFail($id);
+        return view("user.index")->with('user',$author);
     }
 
     public function edit($id)

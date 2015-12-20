@@ -3,6 +3,7 @@
 namespace App;
 
 use App\UserTraits\HasRoles as HasRoles;
+use App\Adventure as Adventure;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -40,11 +41,12 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
     public function adventures(){
-        $adventures = DB::table('adventures')
-            ->join('users', 'users.id', '=', 'adventures.user_id')
-            ->select('adventures.*')
-            ->where('adventures.user_id', '=', $this -> id)
-            ->get();
+        //$adventures = DB::table('adventures')
+            //->join('users', 'users.id', '=', 'adventures.user_id')
+            //->select('adventures.*')
+            //->where('adventures.user_id', '=', $this -> id)
+            //->get();
+        $adventures = Adventure::all()->where('user_id', '=', $this->id);
         return $adventures;
     }
 }
