@@ -32,7 +32,6 @@
                             @can('admin')
                             <li><a href="/admin/home">User Management</a></li>    
                             @endcan
-                            <li><a href="/profile">My Profile</a> </li>
                             <li><a href="/auth/logout">Logout</a></li>
                             @else
                             <li><a href="/auth/register"</a> Register</li>

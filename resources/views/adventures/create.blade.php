@@ -38,6 +38,8 @@
                                 <input class="btn btn-info btn-block" type="submit" value="Post Adventure">
                             </div>
                         </form>
+                    </div>
+                    </div>
                         @if (count($errors)>0)
                             <div class="alert alert-danger">
                                 <ul>
@@ -47,7 +49,7 @@
                                 </ul>
                             </div>
                         @endif
-                    </div>
+                    
                 </div>
             </div>
         </div>
