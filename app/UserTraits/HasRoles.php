@@ -31,8 +31,8 @@ trait HasRoles{
     {
         return $this->hasRole('admin');
     }
-    public function isOEMAdmin()
+     public function isAuthor()
     {
-        return $this->hasRole('EM_LIVE_OEM_ADMIN');
+        return $this->hasRole('author');
     }
 }

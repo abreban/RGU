@@ -4,8 +4,8 @@
     <h4> Top 5 Adventures! </h4>
     <div class="panel panel-info">
          <div class="panel-body">
-        @if count($top_adventures)
-        @for ($i = 0; $i < 5; $i++)
+        @if (count($top_adventures))
+        @for ($i = 0; $i<5; $i++)
         	<div>
 		        <h1> {{$top_adventures[$i]->name}}<span class="badge badge-important">{{$top_adventures[$i]->all_votes}}</span></h1>
 		        <br/>

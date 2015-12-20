@@ -14,5 +14,19 @@
         @endforeach
        </div>
        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                @foreach($authors as $author)
+                    <div class="col-sm-10">
+
+                        <h1><a href="/authors/{{$author->id}}" class="btn btn-default">View</a>
+                            {{$author->name}}
+                        </h1>
+                        <br />
+
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
-@stop
+@endsection

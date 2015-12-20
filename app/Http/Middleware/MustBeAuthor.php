@@ -15,6 +15,11 @@ class MustBeAuthor
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $user = $request->user();
+        if($user && $user->isAuthor())
+        {
+            return $next($request);
+        }
+        return redirect('/');
     }
 }

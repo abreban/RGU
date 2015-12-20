@@ -43,11 +43,13 @@
             @endforeach
           </ul>
         @endif
+          @can('add_pictures')
             <hr>
               Add pictures!
               <form action="/addpicture/{{$adventure->id}}" class="dropzone">
                   {{csrf_field()}}
-              </form>   
+              </form> 
+          @endcan  
         </div>
         
   </div>

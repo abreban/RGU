@@ -16,7 +16,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/adventures">Adventures</a></li>
                         @if (Auth::check())
+                        @can('canAddAdventure')
                         <li><a href="/adventures/create">Add Adventure</a></li>
+                        @endcan
                         <li><a href="/authors">Authors</a></li>
                         @endif
                     </ul>

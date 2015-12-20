@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\Role;
 use App\User;
 use App\UserRole;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB as DB;
 class AuthorsController extends Controller
 {
