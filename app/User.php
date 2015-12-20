@@ -41,12 +41,8 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
     public function adventures(){
-        //$adventures = DB::table('adventures')
-            //->join('users', 'users.id', '=', 'adventures.user_id')
-            //->select('adventures.*')
-            //->where('adventures.user_id', '=', $this -> id)
-            //->get();
-        $adventures = Adventure::all()->where('user_id', '=', $this->id);
+        $adventures = Adventure::where('user_id', $this->id)->get();
         return $adventures;
     }
+
 }
