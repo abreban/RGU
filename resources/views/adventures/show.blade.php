@@ -10,14 +10,7 @@
           </div>
         <div class="container-fluid">
         <div class="col-md-6">
-          <ul class="bxslider">
-            @foreach($pictures as $picture)
-                <li><img src="/photos/{{$picture->path}}"></li>
-            @endforeach
-          </ul>
-        </div>
-         <div class="col-sm-6">
-                      <div class="panel panel-info">
+          <div class="panel panel-info">
                           <div class="panel-heading">
                               <span class="panel-title">Story</span>
                           </div>
@@ -41,18 +34,24 @@
                               <a href="/comments/create/{{$adventure->id}}" class="btn btn-primary pull-right">Comment</a>
                           </div>
                       </div>
-                  </div>
-    </div>
-<div class="row">
-  <div class="container-fluid">
-    <div class="col-md-6">
-      Add pictures!
-      <form action="/addpicture/{{$adventure->id}}" class="dropzone">
-          {{csrf_field()}}
-      </form>   
-    </div>
+        </div>
+        <div class="col-md-6">
+        @if(count($pictures))
+          <ul class="bxslider">
+            @foreach($pictures as $picture)
+                <li><img src="/photos/{{$picture->path}}"></li>
+            @endforeach
+          </ul>
+        @endif
+            <hr>
+              Add pictures!
+              <form action="/addpicture/{{$adventure->id}}" class="dropzone">
+                  {{csrf_field()}}
+              </form>   
+        </div>
+        
   </div>
-</div>
+
  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
 <script type="text/javascript">$( document ).ready(function() {
