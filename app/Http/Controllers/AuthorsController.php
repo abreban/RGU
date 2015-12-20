@@ -8,7 +8,6 @@ use App\User;
 use App\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB as DB;
-
 class AuthorsController extends Controller
 {
 
@@ -20,15 +19,16 @@ class AuthorsController extends Controller
             ->select('users.*')
             ->where('roles.name', '=', 'author')
             ->get();
-        return view("authors.index")
+        return view('authors.index')
             ->with('authors',$authors);
 
     }
 
     public function show($id)
     {
-        $author = User::findOrFail($id);
-        return view("user.index")->with('user',$author);
+        $author = Users::findOrFail($id);
+        return view('authors.autor')
+        ->with('author',$author);
     }
 
 }
