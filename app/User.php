@@ -45,4 +45,10 @@ class User extends Model implements AuthenticatableContract,
         return $adventures;
     }
 
+    public function country()
+    {
+        $country = Country::where('id', $this->countryID)->get();
+        return $country;
+    }
+
 }

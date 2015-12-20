@@ -24,16 +24,6 @@ class AuthorsController extends Controller
 
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function show($id)
     {
         $author = Users::findOrFail($id);
@@ -41,18 +31,4 @@ class AuthorsController extends Controller
         ->with('author',$author);
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
 }
