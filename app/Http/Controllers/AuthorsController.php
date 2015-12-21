@@ -27,7 +27,12 @@ class AuthorsController extends Controller
     public function show($id)
     {
         $author = User::findOrFail($id);
-        return view("user.index")->with('user',$author);
+        $country = Country::find($author->country_id);
+        return view("user.index")
+        ->with('user',$author)
+        ->with('country', $country)
+        ;
     }
 
 }
+

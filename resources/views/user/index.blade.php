@@ -11,7 +11,7 @@
         <div class="col-md-6">
             <div class="panel panel-info">
                 <div class="panel-body">
-                    <h4>From {{$user->country()}}</h4>
+                    <h4>From: {{$user->country()->name}}</h4>
                 </div>
             </div>
         </div>
